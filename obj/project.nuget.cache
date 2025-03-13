@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "LcF5nCovsKI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chafiq\\Documents\\dotnet Projects\\dotnet-Api\\dotnet-Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chafiq\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.2\\microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
+    "C:\\Users\\chafiq\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Une erreur s’est produite lors de l’obtention des données de vulnérabilité du package : Impossible de charger l'index de service pour la source https://os-ancfcc.pkgs.visualstudio.com/d6c10140-72e1-4b0f-ac42-c7f7f1281133/_packaging/ANCFCC.Feed/nuget/v3/index.json."
+    }
+  ]
+}
