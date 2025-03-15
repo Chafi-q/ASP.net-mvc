@@ -1,43 +1,38 @@
-using System.Collections;
 using dotnetapi.data;
-using dotnetapi.Data;
 using dotnetapi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace dotnetapi.Controllers {
+namespace dotnetapi.Controllers
+{
     [Route("api/commands")]
     [ApiController]
-    public class CommandsController:ControllerBase {
+    public class CommandsController : ControllerBase
+    {
+        private readonly ICommanderRepo _repository;
 
-
-        private readonly ICommanderRepo _repository ;
-
-         public CommandsController(ICommanderRepo repository)
-         {
+        public CommandsController(ICommanderRepo repository)
+        {
             _repository = repository;
-         }
-        
-
-
-        [HttpGet]
-        public ActionResult <IEnumerable<Command>> GetAllCommands () {
-            var CommandItems = _repository.GetAllCommands() ;
-            return Ok(CommandItems);
         }
 
-
-
         [HttpGet]
-        public ActionResult <Command> GetCommandById(int id) {
-            
-            var Command = _repository.GetCommandById(id);
-            return Ok(Command);
-
-            
+        public ActionResult<IEnumerable<Command>> GetAllCommands()
+        {
+            var commandItems = _repository.GetAllCommands();
+            return Ok(commandItems);
         }
-        
-       
 
+        [HttpGet("{id}")]
+        public ActionResult<Command> GetCommandById(int id)
+        {
+            var command = _repository.GetCommandById(id);
+            
+            if (command == null) 
+            {
+                return NotFound(); // Fix: Handle case where command doesn't exist
+            }
+
+            return Ok(command);
+        }
     }
-
 }

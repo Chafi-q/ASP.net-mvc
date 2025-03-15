@@ -1,0 +1,30 @@
+# Compiled binaries
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.idea/
+*.user
+*.suo
+*.vsp
+*.bak
+*.ncb
+*.opendb
+*.VC.db
+*.vscode/
+
+# Visual Studio settings
+*.vs/
+.vs/
+
+# Build artifacts
+*.exe
+*.dll
+*.pdb
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+
+# Logs & De
