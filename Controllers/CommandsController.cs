@@ -9,7 +9,14 @@ namespace dotnetapi.Controllers {
     [ApiController]
     public class CommandsController:ControllerBase {
 
-        private readonly MockCommanderRepo _repository = new() ;
+
+        private readonly ICommanderRepo _repository ;
+
+         public CommandsController(ICommanderRepo repository)
+         {
+            _repository = repository;
+         }
+        
 
 
         [HttpGet]
