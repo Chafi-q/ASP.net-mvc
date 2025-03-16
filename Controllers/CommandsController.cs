@@ -29,7 +29,7 @@ namespace dotnetapi.Controllers
             
             if (command == null) 
             {
-                return NotFound(); // Fix: Handle case where command doesn't exist
+                return NotFound(); 
             }
 
             return Ok(command);
