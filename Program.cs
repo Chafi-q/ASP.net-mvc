@@ -1,4 +1,5 @@
 using Commander.Data;
+using dotnet_Api.Data;
 using dotnetapi.data;
 using dotnetapi.Data;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
-builder.Services.AddScoped<ICommanderRepo,MockCommanderRepo>();
+builder.Services.AddScoped<ICommanderRepo,CommanderRepo>();
 
 var app = builder.Build();
 
