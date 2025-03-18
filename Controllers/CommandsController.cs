@@ -1,3 +1,4 @@
+using dotnet_Api.Dtos;
 using dotnetapi.data;
 using dotnetapi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,7 @@ namespace dotnetapi.Controllers
         public CommandsController(ICommanderRepo repository)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -34,5 +36,27 @@ namespace dotnetapi.Controllers
 
             return Ok(command);
         }
-    }
+
+       [HttpPost]
+        public ActionResult<CommandDto> CreateCommand(CommandDto commandDto)
+        {
+            if (commandDto == null)
+            {
+                return BadRequest("Command data is required.");
+            }
+
+            // Map DTO to Command model
+            var command = _mapper.Map<Command>(commandDto);
+
+            // Add the command to the database
+            _context.Commands.Add(command);
+            _context.SaveChanges();  // Synchronous save
+
+            // Return the created Command as DTO
+            var createdCommandDto = _mapper.Map<CommandDto>(command);
+
+            // Return the location of the new resource in the response header
+            return CreatedAtAction(nameof(GetCommand), new { id = command.Id }, createdCommandDto);
+        }
+     }
 }
