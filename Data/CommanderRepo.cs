@@ -18,7 +18,7 @@ namespace dotnet_Api.Data {
 
         public Command GetCommandById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Commands.FirstOrDefault(p => p.Id == id);
         }
     }
 }

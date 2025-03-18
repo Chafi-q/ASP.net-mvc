@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace dotnet_Api.Migrations
 {
     [DbContext(typeof(CommanderContext))]
-    [Migration("20250317212647_initial")]
-    partial class initial
+    [Migration("20250318213133_first-update")]
+    partial class firstupdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,7 +37,8 @@ namespace dotnet_Api.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.HasKey("Id");
 
