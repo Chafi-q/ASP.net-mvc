@@ -1,2 +1,6 @@
 we need to decouple what we have in our doain from what we send and receive 
 Internal domain Model / external dTos ,
+
+
+your CommandMapper class only has static methods, which means you don’t need to instantiate it. You can use it directly in your controller without dependency injection.
+

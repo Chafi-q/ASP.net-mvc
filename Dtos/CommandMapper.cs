@@ -15,9 +15,8 @@ namespace dotnet_Api.Dtos {
       public static Command ToModel(CommandDto dto){
        
         return new  Command {
-            Id = dto.Id ,
-            Title = dto.Title
-
+            Title = dto.Title,
+            Content = "null"
         };
       }
 

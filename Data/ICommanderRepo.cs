@@ -7,7 +7,7 @@ namespace dotnetapi.data {
         IEnumerable<Command> GetAllCommands () ;
         CommandDto GetCommandById(int id);
 
-        void CreateCommand(CommandDto commandDto);
+        CommandDto CreateCommand(CommandDto commandDto);
 
     }
 } 

@@ -24,11 +24,12 @@ namespace dotnet_Api.Data {
            return CommandMapper.ToDto(command); 
         }
 
-         public void CreateCommand(CommandDto commandDto)
+         public CommandDto CreateCommand(CommandDto commandDto)
     {
-        var command = CommandMapper.ToModel(commandDto);  
+        var command = CommandMapper.ToModel(commandDto);
         _context.Commands.Add(command);
         _context.SaveChanges();
+        return CommandMapper.ToDto(command);
     }
 }
 }

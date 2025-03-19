@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace dotnetapi.Data {
 
-    public class MockCommanderRepo : ICommanderRepo
+    public class MockCommanderRepo
     {
         public IEnumerable<Command> GetAllCommands()
         {
